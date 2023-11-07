@@ -63,8 +63,9 @@ def app():
             print("Book added!")
             time.sleep(1.5)
         elif choice == '2':
-            # View all Books
-            pass
+            for book in session.query(Book):
+                print(f'{book.id} | {book.title} | {book.author} | {book.price}')
+            input('\nPress enter to return to the main menu')
         elif choice == '3':
             # Search for book
             pass
